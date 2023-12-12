@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- android charting fragment which contains an edit text for searching for a location and a submit button.
+ It also contains a bar chart view for the MPAndroidChart dependency implemented. -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".VisualScreenFragment">
+
+    <!-- Edit text for searching for a location. -->
+    <EditText
+        android:id="@+id/ed_locationToSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/city_hint"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="#44243F"
+        app:layout_constraintEnd_toStartOf="@id/bt_searchForLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/custom_rounded_corner"/>
+
+    <!-- Image button for submitting a search for the location in the edit text. -->
+    <ImageButton
+        android:id="@+id/bt_searchForLocation"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ed_locationToSearch"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bt_search_submit"
+        android:scaleType="centerCrop"
+        android:background="@null" />
+
+    <!-- Text view used to put in a heading for the bar chart view. -->
+    <TextView
+        android:id="@+id/tv_headingAndCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ed_locationToSearch" />
+
+    <!-- Bar chart view for the MPAndroidChart dependency -->
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barchart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_headingAndCity" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,19 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+
+        // repository access for the android charting dependency.
+        maven {url 'https://jitpack.io' }
+    }
+}
+rootProject.name = "WeatherApplicationFinal"
+include ':app'

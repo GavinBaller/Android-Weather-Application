@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- home fragment is the default page for the application. Contains text fields for weather information, image
+for the weather icons edit text for searching for a location, as well as submit and location services buttons. -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeScreenFragment">
+
+    <!-- Text view for the the location of weather search. -->
+    <TextView
+        android:id="@+id/tv_cityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="150dp"
+        android:textAlignment="center"
+        android:textSize="52sp"
+        android:fontFamily="sans-serif-medium"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_temperature" />
+
+    <!-- Text view for the temperature at the location -->
+    <TextView
+        android:id="@+id/tv_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="150dp"
+        android:textAlignment="center"
+        android:textSize="52sp"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintTop_toBottomOf="@id/tv_cityName"
+        app:layout_constraintBottom_toTopOf="@id/iv_weatherCondition"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Image view for the icons describing the weather. -->
+    <ImageView
+        android:id="@+id/iv_weatherCondition"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        tools:src="@tools:sample/avatars"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_temperature"
+        app:layout_constraintBottom_toTopOf="@id/tv_weatherComment"/>
+
+    <!-- Text view for a comment on the weather. -->
+    <TextView
+        android:id="@+id/tv_weatherComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="150dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_weatherCondition"
+        app:layout_constraintBottom_toTopOf="@id/ed_locationToSearch"/>
+
+    <!-- Edit text for searching for a location. -->
+    <EditText
+        android:id="@+id/ed_locationToSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:hint="@string/city_hint"
+        android:textColor="@color/white"
+        android:textColorHint="#44243F"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/bt_searchForLocation"
+        app:layout_constraintTop_toBottomOf="@id/tv_weatherComment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/custom_rounded_corner"/>
+
+    <!-- Image button for submitting a search for the location in the edit text. -->
+    <ImageButton
+        android:id="@+id/bt_searchForLocation"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/bt_locationServicesSearch"
+        app:layout_constraintStart_toEndOf="@id/ed_locationToSearch"
+        app:layout_constraintTop_toBottomOf="@id/tv_weatherComment"
+        app:srcCompat="@drawable/bt_search_submit"
+        android:scaleType="centerCrop"
+        android:background="@null" />
+
+    <!-- Image button for the using location services for location -->
+    <ImageButton
+        android:id="@+id/bt_locationServicesSearch"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bt_searchForLocation"
+        app:layout_constraintTop_toBottomOf="@id/tv_weatherComment"
+        app:srcCompat="@drawable/bt_location_submit"
+        android:scaleType="centerCrop"
+        android:background="@null"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- used to make rounded fields to improve appearance - https://stackoverflow.com/a/19650617 -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <corners
+        android:bottomLeftRadius="20dp"
+        android:bottomRightRadius="20dp"
+        android:radius="20dp" />
+
+    <solid
+        android:color="#694F65"/>
+
+</shape>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">WeatherApplicationFinal</string>
+    <string name="application_name">Breeze: weather with emotion</string>
+    <string name="home_button">Home Button</string>
+    <string name="explore_button">Explore Button</string>
+    <string name="settings_button">Settings Button</string>
+    <string name="visual_button">Visual Button</string>
+    <string name="application_logo">Application Logo</string>
+    <string name="city_hint">Canberra</string>
+    <string name="default_location">Default Location</string>
+    <string name="total_uses">Total Uses</string>
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

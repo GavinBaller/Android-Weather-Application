@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- explore fragment contains similar information to the home screen with the exception of an edit
+text field and the two buttons. all this requires is a button to get a random locations weather. -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExploreScreenFragment">
+
+    <!-- Text view for the the location of weather search. -->
+    <TextView
+        android:id="@+id/tv_cityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="150dp"
+        android:textAlignment="center"
+        android:textSize="52sp"
+        android:fontFamily="sans-serif-medium"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_temperature" />
+
+    <!-- Text view for the temperature at the location -->
+    <TextView
+        android:id="@+id/tv_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="150dp"
+        android:textAlignment="center"
+        android:textSize="52sp"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintTop_toBottomOf="@id/tv_cityName"
+        app:layout_constraintBottom_toTopOf="@id/iv_weatherCondition"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Image view for the icons describing the weather. -->
+    <ImageView
+        android:id="@+id/iv_weatherCondition"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        tools:src="@tools:sample/avatars"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_temperature"
+        app:layout_constraintBottom_toTopOf="@id/tv_weatherComment"/>
+
+    <!-- Text view for a comment on the weather. -->
+    <TextView
+        android:id="@+id/tv_weatherComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="150dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_weatherCondition"
+        app:layout_constraintBottom_toTopOf="@id/bt_exploreRandomCity" />
+
+    <!-- Image button for submitting getting a random locations weather. -->
+    <ImageButton
+        android:id="@+id/bt_exploreRandomCity"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:text="Explore Random City"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_weatherComment"
+        app:srcCompat="@drawable/bt_explore_activity_explore"
+        android:scaleType="centerCrop"
+        android:background="@null"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

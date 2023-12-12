@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- settings fragment contains an information on the users default location and the total number of
+application uses. an edit text field allows the user to update their default location. -->
+
+<!-- used multiple linear layouts to arrange the different elements. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SettingsScreenFragment"
+    android:orientation="vertical">
+
+    <!-- This linear layout holds the first row text view and edit text. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:context=".SettingsScreenFragment"
+        android:background="#5D3E58"
+        android:minHeight="80dp">
+
+        <!-- Text view for the default location setting -->
+        <TextView
+            android:id="@+id/tv_defaultLocation"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="@string/default_location"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/tv_totalLogins"
+            app:layout_constraintEnd_toStartOf="@id/ed_defaultLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+        <!-- Edit text for the user to update their default location. -->
+        <EditText
+            android:id="@+id/ed_defaultLocation"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_rounded_corner"
+            android:ems="10"
+            android:hint="@string/city_hint"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="#44243F"
+            app:layout_constraintBottom_toTopOf="@id/tv_totalLogins"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_defaultLocation"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+    </LinearLayout>
+
+    <!-- This linear layout holds the next row with two text views -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".SettingsScreenFragment"
+        android:orientation="horizontal"
+        android:background="#5D3E58"
+        android:minHeight="80dp">
+
+        <!-- Text view for the total number of uses label. -->
+        <TextView
+            android:id="@+id/tv_totalLogins"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="@string/total_uses"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_totalLoginsOutput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ed_defaultLocation" />
+
+        <!-- Text view that is updated with the actual total number of uses.  -->
+        <TextView
+            android:id="@+id/tv_totalLoginsOutput"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_rounded_corner"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="#44243F"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_totalLogins"
+            app:layout_constraintTop_toBottomOf="@id/tv_defaultLocation" />
+
+    </LinearLayout>
+
+</LinearLayout>
